@@ -1,5 +1,5 @@
-clear;
 clc;
+clear;
 N=128000;
 mean=30;
 sigma=2;
@@ -48,7 +48,7 @@ title("Histogram of above signal");
 
 %second method
 figure;
-X2= rand(1,N);
+X2=rand(1,N);
 x_r2=sqrt(-2*log(X)).*cos(2*pi*X2);
 x_r2=x_r2*sigma+mean;
 subplot(211);
