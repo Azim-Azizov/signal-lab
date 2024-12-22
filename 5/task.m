@@ -1,6 +1,6 @@
 clear;
 clc;
-t=linspace(-pi,pi,1000);
+t=linspace(-pi, pi, 1000);
 y=(1+0.9.*cos(8.*t))+sin(5.*t+10.*t.^2);
 subplot(221); plot(t, y); grid on; 
 title('(1+0.9.*cos(8.*t))+sin(5.*t+10.*t.^2)');
@@ -17,7 +17,6 @@ y3=y*0;
 y3(1000)=y(1000);
 subplot(224); plot(t, y3, '*-'); grid on; title('Third sample');
 
-%Step response
 clc;
 figure;
 t=linspace(0, 10, 50);
@@ -39,7 +38,7 @@ subplot(224); plot(t, y3, '*-'); grid on; title('30th step');
 
 clc;
 figure;
-t=linspace(-2*pi,2*pi,1000);
+t=linspace(-2*pi, 2*pi, 1000);
 y=3.*cos(7.*pi.*t)+exp(-10)-sin(t.*pi.*t.^2);
 subplot(311); plot(t, y); grid on; 
 title('3.*cos(7.*pi.*t)+exp(-10)-sin(t.*pi.*t.^2)');
