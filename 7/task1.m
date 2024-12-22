@@ -1,0 +1,23 @@
+clc;
+f1 = 50;
+f2 = 100;
+f3 = 120;
+f = max([f1,f2,f3]);
+fs = 3* f;
+Ts = 1/fs;
+t= 0:Ts:1;
+x = sin(2*pi*f1*t)+ 0.7*sin(2*pi*f2*t)+0.5*sin(2*pi*f3*t);
+noise = rand(1,length(t));
+xn=x+noise;
+subplot(2,2,1);
+plot(t,x); grid on;title('original signal');
+subplot(2,2,2);
+plot(t,xn); grid on;title('noisy signal');
+
+X= fft(x,1024);
+XN = fft(xn, 1024);
+fp=fs*(0:511)/1024;
+subplot(2,2,3);
+plot(fp, abs(X(1:512))); grid on; title('FFT of the Original Signal');
+subplot(2,2,4);
+plot(fp, abs(XN(1:512))); grid on; title('FFT of the Noisy Signal');
